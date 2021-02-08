@@ -2,9 +2,9 @@ import Lrz from 'lrz'
 
 /*eslint-disable*/
 export default class ImageCompress {
-  constructor (file) {
+  constructor (file, quality) {
     return new Promise((resolve, reject) => {
-      Lrz(file, { quality: 0.4 })
+      Lrz(file, { quality: quality || 0.4 }) // 压缩比例默认0.4
         .then(function (rst) {
           resolve(rst)
         }).catch(function (err) {
